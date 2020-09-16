@@ -5,9 +5,16 @@ import PlantList from "./components/PlantList";
 import ShoppingCart from "./components/ShoppingCart";
 import CheckoutForm from "./components/CheckoutForm";
 
+import Nav from './components/Nav'
+
 import "./App.css";
 
 function App() {
+
+  
+
+
+
   // array of plants that have been added to the cart
   const [cart, setCart] = useState([]);
 
@@ -21,6 +28,8 @@ function App() {
     setCart(cart.filter((p) => p.id !== plant.id));
   };
 
+ 
+
   return (
     <div>
       <Router>
@@ -30,6 +39,11 @@ function App() {
           </h1>
           <ul className="steps">
             <li>
+              <NavLink exact to="/">
+                darkmode
+              </NavLink>
+            </li>
+             <li>
               <NavLink exact to="/">
                 Plants
               </NavLink>
@@ -61,7 +75,9 @@ function App() {
         />
         <Route path="/checkout" component={CheckoutForm} />
       </Router>
-    </div>
+  
+   </div>
+   
   );
 }
 
